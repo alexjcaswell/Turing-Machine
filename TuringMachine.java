@@ -12,7 +12,7 @@ class TuringMachine{
 			System.exit(-1);
 		}
 		TuringMachine machine = Compiler.compile(new Scanner(new File(args[0])));
-		machine.tape.write(args[1]);
+		machine.tape = machine.tape.write(args[1]);
 		// System.out.println(machine.tape);
 		machine.run();
 	}

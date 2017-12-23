@@ -22,13 +22,14 @@ class Tape{
 		data[(int)headIndex] = c;
 	}
 
-	public void write(String s){
+	public Tape write(String s){
 		Tape t = this;
 		for(char c: s.toCharArray()){
 			t.write(c);
-			t.move(1);
+			t = t.move(1);
 		}
-		t.move(-s.length());
+		t = t.move(-s.length());
+		return t;
 	}
 
 	public Tape move(long d){
